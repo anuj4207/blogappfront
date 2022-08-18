@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">GG Blogger</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+        <li><a [routerLink]="['createblog', user]">Create Blog</a></li>
+        <li><a [routerLink]="['myblog',user]">My Blog</a></li>
+        <li><form >
+          <input  type="search" placeholder="Search" aria-label="Search">
+          <button class="btn" type="submit">Search</button>
+        </form></li>
+        <li><a href="/">Log Out</a></li>
+      </div>
+    </ul>
+  </nav>
+  <div class="post">
+     <div *ngFor="let datas of data; let ii = index">
+      <div class="postsec">
+        <section class="postsec2">
+          <h3>{{datas.title}}</h3>
+          <h4>{{datas.blog}}</h4>
+          <h5>Created By- {{datas.username}}</h5>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

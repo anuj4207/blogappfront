@@ -1,0 +1,60 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">Start Blogging</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <div class="menu">
+        <li><a routerLink="createblog">My Blog</a></li>
+        <li><a href="/">Log Out</a></li>
+      </div>
+    </ul>
+  </nav>
+
+  <div class="posts">
+      <div class="postsec">
+        <section class="postsec2">
+          <form [formGroup]="createBlogForm">
+
+            <!-- Title -->
+            <div class="title">
+              <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Name your Blog"
+                formControlName="title"/>
+            </div>
+
+            <!-- Post -->
+            <div class="post3">
+                <textarea formControlName="blog" class="post" name="comment" >Enter text here...</textarea>
+            </div>
+
+            <!--Image-->
+            <div class="imagepost">
+              <form [formGroup]="createBlogForm">
+                <label for="img">Select image:</label>
+                <input type="file" id="img" name="img" accept="image/*" formControlName="img">
+                <input type="submit">
+              </form>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;margin-left: 200px"
+                (click)="onSubmit()">Submit</button>
+            </div>
+
+          </form>
+        </section>
+    </div>
+  </div>
+</body>
+
+</html>
